@@ -1,1 +1,23 @@
-<h1>qwq</h1>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hint 自动机</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="title">Hint 自动机</h2>
+        <p class="subtitle">基于 LLM 对题解进行总结的洛谷题目 Hint 生成器</p>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="输入题目编号 (如 P1000)" autocomplete="off">
+            <button class="search_button" onclick="searchContent()">查询!</button>
+        </div>
+        <div id="results">
+            <p class="no-results">请输入题目编号 (例如 P1000)</p>
+        </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
