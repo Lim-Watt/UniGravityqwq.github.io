@@ -33,7 +33,7 @@ body {
     /* margin-bottom: 30px; */
 }
 .subtitle{
-    color: var(--gray);
+    color: #a0a0a0;
     margin-top: -10px;
 }
 .search-box {
@@ -58,13 +58,13 @@ body {
 }
 .search_button {
     background:var(--blue);
-    color: #222222;
+    color: #FFF;
     border: none;
     padding: 12px 20px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    /* font-weight: bold; */
+    font-weight: bold;
     transition: background 0.3s;
 }
 .search_button:hover {
@@ -125,20 +125,22 @@ body {
     padding-bottom: 10px !important;
     background: var(--empty);
     margin-bottom: 18px;
-    transition: 0.8s;
+    transition: 1.2s;
 }
 .bigansbox{
-    max-height: 250px !important;
+    max-height: 500px !important;
 }
 
 .difftag{
     border-radius: 5px;
     font-weight: bold;
     padding: 3px;
+    color: #FFF !important;
+    text-decoration: none !important;
 }
 
 .hintbtn{
-    color: var(--white);
+    color: #FFF;
     padding: 6px 20px;
     cursor: pointer;
     font-size: 16px;
@@ -146,8 +148,10 @@ body {
     transition: background 0.3s;
     border-radius: 5px;
     border: 2px solid var(--blue);
-
     background: var(--empty);
+}
+.hintbtn:hover{
+    background: #3498db18;
 }
 .hintbtndown{background: var(--blue) !important;}
 

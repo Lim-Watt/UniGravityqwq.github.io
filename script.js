@@ -23,18 +23,44 @@ async function searchContent() {
     // 清空结果容器
     resultsContainer.innerHTML = '';
     
+    errInput=0;
+    jsonData=0,results=0;
+
     if (!searchValue) {
-        resultsContainer.innerHTML = '<p class="error">请输入有效的序号</p>';
-        return;
+        errInput=1;
+    }else{
+        // 在JSON数据中查找匹配项
+        // const 
+        jsonData = await loadJSON();
+        // const 
+        results = jsonData.filter(item => item.id === searchValue);
+        
+        if (results.length === 0) {
+            errInput=1;
+        }
     }
     
-    // 在JSON数据中查找匹配项
-    const jsonData = await loadJSON();
-    const results = jsonData.filter(item => item.id === searchValue);
-    
-    if (results.length === 0) {
-        resultsContainer.innerHTML = '<p class="no-results">未找到 <span class="highlight">' + 
-                                    searchValue + '</span></p>';
+    if(errInput){
+        resultsContainer.innerHTML = `
+            <div class="problembox">
+                <div style="display: flex;justify-content: center;">
+                    <h2 style="color:#FE4C61;">未找到 ${searchValue}</h2>
+                </div>
+                <div style="display: flex;justify-content: center;color:#ddd;">
+                    <div>
+                        <p>这是一些预料内的可能原因：</p>
+                        <p style="font-size:20px;">一、题目不存在或被隐藏。</p>
+                        <p style="font-size:20px;color:#ddd;">二、难度过低（<a style="font-weight:bold;color:#52C41A;">绿题</a>及以下）的题目数据将暂时不会收录。<a style="font-size:16px;">（后续可能会进一步收录绿题相关 Hint）</a></p>
+                        <p style="font-size:20px;">三、题目没有题解。<a style="font-size:16px;">（按照题解标题寻找，因此可能存在某些题解未被搜索到）</a></p>
+                        <br>
+                        <p>如果发现预料外的问题，<a style="font-size:20px;">请先确认该问题不属于上述原因</a></p>
+                        <p>例如：<a style="font-size:20px;">题目为新增、题目的难度升为蓝题及以上、有人写了该题题解、题目或题解的爬取存在问题</a></p>
+                        <p>如果确实存在问题，可以联系 <a href="https://www.luogu.com.cn/chat?uid=582360" style="font-size: 20px;font-weight:bold;color:#3498DB;text-decoration:none;">@UniGravity</a></p>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        `;
         return;
     }
 
@@ -55,7 +81,10 @@ async function searchContent() {
         resultElement.innerHTML = `
             <div class="problembox">
                 <h3 style="margin-top:-3px;">${item.title}</h3>
-                <span class="difftag" style="background-color:${diffcolor[item.diff]};">&nbsp;${difftext[item.diff]}&nbsp;</span><br><br>
+                <a class="difftag" style="background-color:#FE4C61;" href="https://www.luogu.com.cn/problem/${item.id}">&nbsp;原题链接&nbsp;</a>&nbsp;&nbsp;
+                <a class="difftag" style="background-color:#F39C11;" href="https://www.luogu.com.cn/problem/${item.id}/solution">&nbsp;题解链接&nbsp;</a>&nbsp;&nbsp;
+                <a class="difftag" style="background-color:${diffcolor[item.diff]};">&nbsp;${difftext[item.diff]}&nbsp;</a>
+                <br><br>
             </div>
             <div class="ansbox" id="ansbox1">
                 <button class="hintbtn" id="hintbtn1">提示 1</button>
