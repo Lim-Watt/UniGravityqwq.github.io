@@ -30,7 +30,7 @@ async function searchContent() {
             if(1000<=numid&&numid<2000)qryid=1;
             if(2000<=numid&&numid<3000)qryid=2;
             if(3000<=numid&&numid<4000)qryid=3;
-            // if(4000<=numid&&numid<5000)qryid=4;
+            if(4000<=numid&&numid<5000)qryid=4;
             // if(5000<=numid&&numid<6000)qryid=5;
             // if(6000<=numid&&numid<7000)qryid=6;
             // if(7000<=numid&&numid<8000)qryid=7;
@@ -100,7 +100,7 @@ async function searchContent() {
             <div class="problembox">
                 <a style="margin-top:-3px;font-weight:bold;font-size:24px;">${item.title}</a><a style="float: right;" href="https://www.luogu.com.cn/chat?uid=582360"><button class="modal-button">反馈问题</button></a><br><br>
                 <a class="difftag" style="background-color:#FE4C61;" href="https://www.luogu.com.cn/problem/${item.id}">&nbsp;原题链接&nbsp;</a>&nbsp;&nbsp;
-                <a class="difftag" style="background-color:#F39C11;" href="https://www.luogu.com.cn/problem/${item.id}/solution">&nbsp;题解链接&nbsp;</a>&nbsp;&nbsp;
+                <a class="difftag" style="background-color:#F39C11;" href="https://www.luogu.com.cn/problem/solution/${item.id}">&nbsp;题解链接&nbsp;</a>&nbsp;&nbsp;
                 <a class="difftag" style="background-color:${diffcolor[item.diff]};">&nbsp;${difftext[item.diff]}&nbsp;</a>
                 <br><br>
             </div>
