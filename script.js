@@ -31,9 +31,9 @@ async function searchContent() {
             if(2000<=numid&&numid<3000)qryid=2;
             if(3000<=numid&&numid<4000)qryid=3;
             if(4000<=numid&&numid<5000)qryid=4;
-            // if(5000<=numid&&numid<6000)qryid=5;
-            // if(6000<=numid&&numid<7000)qryid=6;
-            // if(7000<=numid&&numid<8000)qryid=7;
+            if(5000<=numid&&numid<6000)qryid=5;
+            if(6000<=numid&&numid<7000)qryid=6;
+            if(7000<=numid&&numid<8000)qryid=7;
             // if(8000<=numid&&numid<9000)qryid=8;
             // if(9000<=numid&&numid<10000)qryid=9;
             // if(10000<=numid&&numid<11000)qryid=10;
