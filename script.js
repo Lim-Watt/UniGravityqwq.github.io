@@ -151,7 +151,7 @@ async function searchContent(searchValue) {
 // 添加键盘支持
 document.getElementById('searchInput').addEventListener('keypress', function(e) {
     if (e.key === 'Enter') {
-        searchContent();
+        DoInputSearch();
     }
 });
 
