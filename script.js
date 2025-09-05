@@ -12,14 +12,14 @@ async function loadJSON(id) {
 async function DoInputSearch() {
     const searchValue = document.getElementById('searchInput').value.trim().toUpperCase();
     
-    // 清空结果容器
-    resultsContainer.innerHTML = '';
-    
     searchContent(searchValue);
 }
 
 async function searchContent(searchValue) {
     const resultsContainer = document.getElementById('results');
+    
+    // 清空结果容器
+    resultsContainer.innerHTML = '';
     
     let errInput=0;
     let jsonData=0,results=0;
